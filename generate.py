@@ -121,5 +121,11 @@ def main():
 
     return
 
+REQ_VERSION = (3,0)
+CUR_VERSION = sys.version_info
+
 if __name__ == "__main__":
-    main()
+    if CUR_VERSION >= REQ_VERSION:
+        main()
+    else:
+        print("Your Python interpreter is too old. The Shoebill Project Generator needs at least Python 3.0.")
