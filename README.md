@@ -4,7 +4,7 @@ This Python script can generate Shoebill maven projects by giving it your Name, 
 
 # Requirements
 
-* [Python 3 or 2](https://www.python.org/downloads/)
+* [Python 3](https://www.python.org/downloads/)
 
 # How to use it?
 
