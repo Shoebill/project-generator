@@ -10,7 +10,7 @@ You can get yourself a pre-build binary from the [Releases](https://github.com/S
 
 # Requirements
 
-* [Python 3](https://www.python.org/downloads/) if you want to run it via the Python Interpreter
+* [Python 2](https://www.python.org/downloads/) if you want to run it via the Python Interpreter
 
 # How to use it?
 

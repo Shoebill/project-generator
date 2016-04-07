@@ -13,7 +13,7 @@ DEFAULT_VERSION = "1.0-SNAPSHOT"
 DEFAULT_DIRECTORY_PATH = ""
 
 def query_yes_no(question, default="yes"):
-    """Ask a yes/no question via input() and return their answer.
+    """Ask a yes/no question via raw_input() and return their answer.
 
     "question" is a string that is presented to the user.
     "default" is the presumed answer if the user just hits <Enter>.
@@ -35,7 +35,7 @@ def query_yes_no(question, default="yes"):
 
     while True:
         sys.stdout.write(question + prompt)
-        choice = input().lower()
+        choice = raw_input().lower()
         if default is not None and choice == '':
             return valid[default]
         elif choice in valid:
@@ -55,7 +55,7 @@ def generateProject(name, artifactId, groupId, author, description, version, loc
         else:
             exit()
 
-    className = input("Main Class Name (no blank spaces): ")
+    className = raw_input("Main Class Name (no blank spaces): ")
 
     sourcePath = os.path.join(location, 'src')
     testPath = os.path.join(sourcePath, 'test', 'java')
@@ -91,29 +91,29 @@ def main():
     print("******************************")
 
     print("\nThis tool will create a maven project for you.\n")
-    projectName = input("Project Name [" + DEFAULT_PROJECT_NAME + "]: ").strip()
+    projectName = raw_input("Project Name [" + DEFAULT_PROJECT_NAME + "]: ").strip()
     if len(projectName) <= 0:
         projectName = DEFAULT_PROJECT_NAME
     artifactId = projectName.lower()
 
-    groupId = input("Group ID [" + DEFAULT_GROUP_ID + "]: ").strip()
+    groupId = raw_input("Group ID [" + DEFAULT_GROUP_ID + "]: ").strip()
     if len(groupId) <= 0:
         groupId = DEFAULT_GROUP_ID
 
-    author = input("Author [" + DEFAULT_AUTHOR + "]: ").strip()
+    author = raw_input("Author [" + DEFAULT_AUTHOR + "]: ").strip()
     if len(author) <= 0:
         author = DEFAULT_AUTHOR
 
-    description = input("Description [" + DEFAULT_DESCRIPTION + "]: ").strip()
+    description = raw_input("Description [" + DEFAULT_DESCRIPTION + "]: ").strip()
     if len(description) <= 0:
         description = DEFAULT_DESCRIPTION
 
-    version = input("Version [" + DEFAULT_VERSION + "]: ").strip()
+    version = raw_input("Version [" + DEFAULT_VERSION + "]: ").strip()
     if len(version) <= 0:
         version = DEFAULT_VERSION
 
     DEFAULT_DIRECTORY_PATH = os.path.join(os.getcwd(), projectName)
-    location = input("Project Location [" + DEFAULT_DIRECTORY_PATH + "]: ").strip()
+    location = raw_input("Project Location [" + DEFAULT_DIRECTORY_PATH + "]: ").strip()
     if len(location) <= 0:
         location = DEFAULT_DIRECTORY_PATH
 
@@ -121,11 +121,5 @@ def main():
 
     return
 
-REQ_VERSION = (3,0)
-CUR_VERSION = sys.version_info
-
 if __name__ == "__main__":
-    if CUR_VERSION >= REQ_VERSION:
-        main()
-    else:
-        print("Your Python interpreter is too old. The Shoebill Project Generator needs at least Python 3.0.")
+    main()
