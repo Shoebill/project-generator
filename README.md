@@ -1,5 +1,3 @@
-# Shoebill Project Generator
-
 ![Project Generator Title](docs/title.png)
 
 This Python script can generate Shoebill maven projects by giving it your Name, Version, Description, Artifact Id, Group Id and Project Location.
